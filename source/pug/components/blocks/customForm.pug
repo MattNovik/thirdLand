@@ -1,0 +1,28 @@
+mixin customForm(options)
+  div(data-form-validate, data-callback="base")
+    form(class=`${options.classname ? 'custom-form ' + options.classname : 'custom-form'}` id=`${'form ' + options.id}` method='post')
+      .custom-form__inputs-wrapper
+        if options.classname === 'second-form'
+          +custom-input({
+            inputType: options.classname === 'second-form' ? 'hidden' : 'text',
+            inputName: "theme",
+            inputPlaceholder: 'ТЕМА'
+          })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", class=`${options.classname === 'second-form' ? 'visibility-hidden': null}`).custom-form__input
+        else
+          +custom-input({
+            inputType: options.classname === 'second-form' ? 'hidden' : 'text',
+            inputName: "theme",
+            inputPlaceholder: 'ТЕМА'
+          })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required, class=`${options.classname === 'second-form' ? 'visibility-hidden': null}`).custom-form__input
+        +custom-input({
+          inputType: "email",
+          inputName: "email",
+          inputPlaceholder: 'ВАШ E-MAIL'
+        })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required).custom-form__input
+        input.partnerId(type="hidden" name="partnerId" value="#PARTNER_ID_VALUE#")
+        button.custom-form__button(type="submit") Рассчитать
+      div(data-validate-type="checkbox" data-required)
+        input(name="agreeament" checked=true class='custom-form__input-agreeament visibility-hidden' id=`${'agreeament ' + options.id}` type="checkbox" )
+        label(for=`${options.id ? 'agreeament ' + options.id: 'agreeament'}`)  Нажимая кнопку "Узнать стоимость", вы соглашаетесь с
+          =' '
+          a(href="#some") политикой конфиденциальности

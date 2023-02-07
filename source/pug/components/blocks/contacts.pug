@@ -1,0 +1,28 @@
+mixin contacts()
+  section.contacts#contacts
+    .contacts__container
+      .contacts__wrapper-tel-email
+        p.contacts__title Контакты:
+        a.contacts__tel(href="tel:+78124093163")
+          +icon('icon-phone', 10,16)
+          span +7 (812) 409-31-63
+        a.contacts__email(href="mailto:studservis@yandex.ru")
+          +icon('icon-email', 16,12)
+          span studservis@yandex.ru
+      .contacts__wrapper-addres
+        p.contacts__title Работаем по будням с 10:00 до 20:00 по Мск
+        a.contacts__addres(href="#adress") ООО&nbsp;"Студсервис", ИНН&nbsp;7820312056, ОГРН&nbsp;1077847598795 от 21 сентября 2007 г
+        a.contacts__politic(href="#pol") Политика конфиденциальности
+      .contacts__socials
+        p.contacts__title Мы в соцсетях:
+        ul.contacts__social-list
+          li.contacts__social-item.tg
+            a(href="https://t.me/StudSHelp_Bot" aria-label="tg link" target="_blank" rel="noreferrer")
+              +icon('icon-tg', 30,30)
+          li.contacts__social-item.ok
+            a(href="https://vk.com/referat" aria-label="ok link" target="_blank" rel="noreferrer")
+              +icon('icon-ok', 30,30)
+          li.contacts__social-item.vk
+            a(href="https://vk.com/referat" aria-label="vk link" target="_blank" rel="noreferrer")
+              +icon('icon-vk', 30,30)
+

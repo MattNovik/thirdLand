@@ -1,0 +1,37 @@
+mixin workProcess()
+  -
+    const workProcessList = [
+      {
+        title: 'Консультируем клиентов уже более 18 лет',
+      },
+      {
+        title: 'Соблюдение сроков выполнения заданий',
+      },
+      {
+        title: 'Персональный менеджер для каждого клиента',
+      },
+      {
+        title: 'Поддержка по всем каналам связи',
+      },
+      {
+        title: 'Кешбэк, акции и розыгрыши',
+      },
+      {
+        title: 'Официальный договор публичной оферты',
+      },
+    ];
+
+  section.work-process#process
+    .work-process__container
+      .work-process__info-wrapper
+          h2.work-process__title Почему мы?
+          ul.work-process__list
+            each item,index in workProcessList
+              li.work-process__item
+                li.work-process__item
+                  +icon('icon-star', 30,30)
+                  h3.work-process__item-title= item.title
+      .work-process__image-wrapper
+        .work-process__inside-wrapper
+          +picture('content', 'process', 'png', 320, 486, "process").work-process__image
+

@@ -1,0 +1,277 @@
+.footer {
+  padding: 61px 0;
+  background-color: rgba(55, 170, 236, 0.1);
+
+  @include vp--1023 {
+    padding: 60px 15px;
+    background-color: $main-color;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-areas:
+      "addres contact"
+      "cards contact";
+    row-gap: 35px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    column-gap: 20px;
+    margin: 0 auto;
+
+    @include vp--1199 {
+      max-width: 1020px;
+    }
+
+    @include vp--1139 {
+      max-width: 904px;
+    }
+
+    @include vp--1023 {
+      width: 100%;
+      display: grid;
+      column-gap: 106px;
+      row-gap: 16px;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "addres"
+        "cards"
+        "contact";
+    }
+
+    /*     @include vp--767 {
+      grid-template-areas:
+        'socialsFoot '
+        'copyright'
+        'cards';
+    } */
+  }
+
+  &__copyright {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: $light-text;
+
+    @include vp--1023 {
+      grid-area: copyright;
+    }
+  }
+
+  &__payment-wrapper {
+    grid-area: cards;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    @include vp--767 {
+      margin: 20px 0 0;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 16px;
+    }
+  }
+
+  &__payment-list {
+    display: flex;
+    column-gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  &__payment-item {
+    width: auto;
+
+    svg {
+      max-width: 50px;
+    }
+  }
+
+  &__payment-text {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: $light-text;
+    white-space: nowrap;
+  }
+
+  &__socials {
+    display: none;
+
+    @include vp--1023 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 16px;
+      grid-area: socialsFoot;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    color: $light-text;
+    margin: 0;
+    white-space: nowrap;
+    margin: 0 0 8px;
+
+    @include vp--767 {
+      white-space: normal;
+    }
+  }
+
+  &__social-list {
+    align-items: center;
+    height: 100%;
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__tel-socials {
+    display: flex;
+    column-gap: 16px;
+
+    @include vp--1023 {
+      grid-area: telSocial;
+    }
+  }
+
+  &__wrapper-tel-email {
+    display: flex;
+    flex-direction: column;
+    row-gap: 21px;
+    grid-area: contact;
+
+    @include vp--1023 {
+      display: grid;
+      justify-content: space-between;
+      grid-template-areas:
+        "title email"
+        "telSocial copyright";
+    }
+
+    @include vp--767 {
+      margin: 14px 0 0;
+      grid-template-areas:
+        "title"
+        "telSocial"
+        "email"
+        "copyright";
+    }
+  }
+
+  &__wrapper-addres {
+    display: flex;
+    flex-direction: column;
+    grid-area: addres;
+    row-gap: 16px;
+
+    @include vp--1439 {
+      margin: 0 auto;
+    }
+
+    @include vp--1023 {
+      margin: 0 auto 0 0;
+    }
+
+    & .footer__title {
+      margin: 0 0 13px;
+    }
+  }
+
+  &__socials {
+    @include vp--1439 {
+      grid-area: socials;
+    }
+
+    @include vp--1023 {
+      display: none;
+    }
+  }
+
+  &__tel {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    text-decoration: none;
+    color: $light-text;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 160%;
+    color: $light-text;
+    transition: color 0.3s ease;
+
+    @include vp--1023 {
+      grid-area: email;
+    }
+
+    &:hover {
+      color: $dark-text;
+    }
+  }
+
+  &__addres {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    text-decoration: none;
+    color: $light-text;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $dark-text;
+    }
+  }
+
+  &__politic {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: $light-text;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $dark-text;
+    }
+  }
+
+  &__social-list {
+    align-items: center;
+    height: 100%;
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__social-item {
+    & a {
+      color: $light-text;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $dark-text;
+      }
+    }
+  }
+}

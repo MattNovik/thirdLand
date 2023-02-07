@@ -1,0 +1,31 @@
+mixin footer()
+    footer.footer#contacts
+      .footer__container
+        .footer__wrapper-addres
+          p.footer__title Работаем по будням с 10:00 до 20:00 по Мск
+          a.footer__addres(href="#adress") ООО&nbsp;"Студсервис", ИНН&nbsp;7820312056, ОГРН&nbsp;1077847598795 от 21 сентября 2007 г
+          a.footer__politic(href="#pol") Политика конфиденциальности
+        .footer__payment-wrapper
+          span.footer__payment-text Мы принимаем:
+          ul.footer__payment-list
+            li.footer__payment-item
+              +icon('icon-visa',68,21)
+            li.footer__payment-item
+              +icon('icon-ms',69,42)
+            li.footer__payment-item
+              +icon('icon-ms',69,42)
+            li.footer__payment-item
+              +icon('icon-mir',74,21)
+        .footer__wrapper-tel-email
+          p.footer__title Контакты
+          .footer__tel-socials
+            a.footer__tel(href="tel:+78124093163") +7 (812) 409-31-63
+            ul.footer__social-list
+              li.footer__social-item.tg
+                a(href="https://t.me/StudSHelp_Bot" aria-label="tg link" target="_blank" rel="noreferrer")
+                  +icon('icon-tg', 30,30)
+              li.footer__social-item.vk
+                a(href="https://vk.com/referat" aria-label="vk link" target="_blank" rel="noreferrer")
+                  +icon('icon-vk', 30,30)
+          a.footer__email(href="mailto:studservis@yandex.ru") studservis@yandex.ru
+          span.footer__copyright © Студсервис 2023 Все права защищены

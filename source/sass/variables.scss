@@ -1,0 +1,38 @@
+$color-transparent: transparent;
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+$main-color: #eff7ff;
+$second-color: #b0db1f;
+$button-color: #ef7e29;
+$light-text: #737373;
+$light-text-gray-700: #787a80;
+$dark-text: #1e212c;
+$error-color: #dc3545;
+$color-biruza: #60d5e1;
+
+$main-font: "Montserrat", "Arial", sans-serif;
+
+$vp--320: 320px;
+$vp--360: 360px;
+$vp--375: 375px;
+$vp--500: 500px;
+$vp--570: 570px;
+$vp--768: 768px;
+$vp--900: 900px;
+$vp--1024: 1024px;
+$vp--1140: 1140px;
+$vp--1200: 1200px;
+$vp--1246: 1246px;
+$vp--1280: 1280px;
+$vp--1440: 1440px;
+$vp--1680: 1680px;
+$vp--1780: 1780px;
+$vp--1920: 1920px;
+$vp--2560: 2560px;
+$tf-default: ease;
+$trans-modal: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$trans-600: 0.6s $tf-default;
+
+$ff-placeholder: "Placeholder", "Arial", sans-serif;
+// Desktop first

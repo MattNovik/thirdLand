@@ -1,0 +1,34 @@
+mixin customSwiper(data)
+  section.custom-swiper
+    .custom-swiper__container
+      p.custom-swiper__help-text Отзывы
+      .swiper#reviews
+        .swiper-wrapper
+          each item, index in data
+            .swiper-slide
+              .custom-swiper__item-wrapper
+                .custom-swiper__avatar-wrapper
+                  if index === 0
+                    +picture('content', 'reviewFirst', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                  else if index === 1
+                    +picture('content', 'reviewSecond', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                  else if index === 2
+                    +picture('content', 'reviewThird', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                  else if index === 3
+                    +picture('content', 'reviewFourth', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                  else if index === 4
+                    +picture('content', 'reviewFirth', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                  else
+                    +picture('content', 'reviewFirst', 'jpg',240,289,'avatar').custom-swiper__avatar-img
+                .custom-swiper__avatar-text-wrapper
+                  +icon('icon-braces', 45, 39).custom-swiper__item-braces
+                  p.custom-swiper__item-text= item.text
+                  +icon('icon-braces', 45, 39).custom-swiper__item-braces.custom-swiper__item-braces--rotates
+                  p.custom-swiper__avatar-name= item.name
+                  p.custom-swiper__avatar-theme= item.theme
+        .swiper-pagination
+        .custom-swiper__buttons
+          button.swiper-button-next(type="button")
+            +icon('icon-arrowLong',20,20)
+          button.swiper-button-prev(type="button")
+            +icon('icon-arrowLong',20,20)

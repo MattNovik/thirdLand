@@ -1,0 +1,200 @@
+.start-page {
+  position: relative;
+  margin: -91px 0 200px 0;
+  padding: 91px 0 0 0;
+
+  @include vp--1023 {
+    margin: -50px 0 0;
+    padding: 50px 0 0 0;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/content//mainBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include vp--767 {
+      background-image: url("../img/content/mainBgMob.png");
+      background-position: center 75%;
+    }
+
+    @include vp--569 {
+      background-position: center 75%;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 55px;
+    max-width: 1140px;
+    margin: 0 auto;
+    min-height: 610px;
+    z-index: 10;
+
+    @include vp--1439 {
+      padding: 0 60px;
+    }
+
+    @include vp--1199 {
+      padding: 0 60px 10px;
+    }
+
+    @include vp--1139 {
+      max-width: 1024px;
+    }
+
+    @include vp--1023 {
+      min-height: 500px;
+      padding: 68px 0 0;
+      justify-content: space-between;
+      margin: 0 0 170px;
+    }
+
+    @include vp--767 {
+      min-height: 886px;
+      padding: 70px 15px 0;
+      margin: 0 0 100px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__main-image {
+    display: none;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    @include vp--1439 {
+      right: 60px !important;
+    }
+
+    @include vp--1023 {
+      right: 15px !important;
+    }
+
+    @include vp--767 {
+      right: 30px !important;
+    }
+
+    @include vp--569 {
+      right: -80px !important;
+    }
+
+    & img {
+      @include vp--1439 {
+        width: 460px !important;
+      }
+
+      @include vp--1023 {
+        width: 317px !important;
+        height: 417px !important ;
+      }
+
+      @include vp--767 {
+        right: 30px !important;
+        width: 277px !important;
+        height: 365px !important;
+      }
+
+      @include vp--569 {
+        right: -80px !important;
+        width: 277px !important;
+        height: 365px !important;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100%;
+    max-width: 70%;
+
+    @include vp--1439 {
+      max-width: 60%;
+    }
+
+    @include vp--1023 {
+      padding: 0 15px;
+      max-width: 65%;
+    }
+
+    @include vp--767 {
+      padding: 0;
+      justify-content: flex-start;
+      max-width: 100%;
+      flex-grow: 0;
+    }
+  }
+
+  &__help-text {
+    font-weight: 700;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: $button-color;
+    margin: 0 0 35px;
+
+    @include vp--767 {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 3.125rem;
+    line-height: 3.8rem;
+    letter-spacing: 0.2px;
+    margin: 0 0 28px;
+    color: $color-default-white;
+
+    @include vp--1199 {
+      font-size: 3.2rem;
+    }
+
+    @include vp--1023 {
+      font-size: 2rem;
+      line-height: 2.45rem;
+      margin: 0 0 30px;
+    }
+
+    @include vp--767 {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__info-text {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: $color-default-white;
+    margin: 0;
+
+    @include vp--1023 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+
+    @include vp--767 {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+}
