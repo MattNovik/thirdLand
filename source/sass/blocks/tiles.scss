@@ -1,0 +1,579 @@
+.tiles {
+  max-width: 1410px;
+  margin: 0 auto 200px;
+
+  @include vp--1439 {
+    margin: 0 15px 200px;
+  }
+
+  @include vp--1023 {
+    margin: 0 15px 120px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 153px 200px;
+    grid-template-areas:
+      "smallestOne smallestTwo bigTwo bigTwo biggestOne biggestOne"
+      "bigOne bigOne bigTwo bigTwo biggestOne biggestOne"
+      "bigOne bigOne small small biggestOne biggestOne";
+    column-gap: 22px;
+    row-gap: 21px;
+
+    @include vp--1439 {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 200px 153px 200px 500px;
+      grid-template-areas:
+        "smallestOne smallestTwo bigTwo bigTwo"
+        "bigOne bigOne bigTwo bigTwo "
+        "bigOne bigOne small small "
+        "biggestOne biggestOne biggestOne biggestOne";
+    }
+
+    @include vp--1023 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 374px 374px 200px 374px;
+      grid-template-areas:
+        "smallestOne smallestTwo"
+        "bigOne bigOne"
+        "bigTwo bigTwo"
+        "small small "
+        "biggestOne biggestOne";
+    }
+
+    @include vp--767 {
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px 200px 200px 200px 200px 200px;
+      grid-template-areas:
+        "smallestOne"
+        "smallestTwo"
+        "bigOne"
+        "bigTwo"
+        "small"
+        "biggestOne";
+    }
+  }
+
+  &__item {
+    background-color: $color-default-white;
+    border-radius: 22px;
+    padding: 32px 38px;
+    position: relative;
+
+    @include vp--1023 {
+      padding: 42px 35px 42px 43px;
+    }
+
+    &--smallest-first {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      row-gap: 16px;
+      height: 100%;
+      grid-area: smallestOne;
+      background-color: $third-color;
+
+      @include vp--1023 {
+        row-gap: 30px;
+      }
+
+      @include vp--767 {
+        padding: 29px 35px;
+      }
+
+      & .tiles__item-dec {
+        position: relative;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: $color-default-white;
+
+        &:after {
+          position: absolute;
+          content: "";
+          top: 4px;
+          right: 0;
+          width: 20px;
+          height: 20px;
+          background-color: $color-default-black;
+          border-radius: 50%;
+        }
+      }
+
+      & .tiles__item-name {
+        position: absolute;
+        right: 53px;
+        top: 44px;
+        transform: rotate(10deg);
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.1px;
+        color: $second-color;
+
+        @include vp--1023 {
+          top: 44px;
+          left: 62px;
+          right: auto;
+        }
+      }
+
+      & .tiles__item-text {
+        margin: 0;
+        font-weight: 400;
+        font-size: 0.92rem;
+        line-height: 122%;
+        color: $main-color;
+      }
+    }
+
+    &--smallest-second {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      row-gap: 38px;
+      height: 100%;
+      grid-area: smallestTwo;
+      background-color: $color-default-white;
+
+      @include vp--767 {
+        padding: 29px 35px;
+      }
+
+      & .tiles__item-dec {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        width: 101px;
+        height: 50px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        @include vp--1023 {
+          right: auto;
+          left: 87px;
+        }
+      }
+
+      & .tiles__item-name {
+        transform: rotate(-15deg);
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2rem;
+        letter-spacing: 0.1px;
+        color: $main-color;
+        padding: 10px 12px 6px;
+        background-color: $third-color;
+        border-radius: 16px;
+        width: 97px;
+      }
+
+      & .tiles__item-text {
+        margin: 0;
+        font-weight: 400;
+        font-size: 0.92rem;
+        line-height: 122%;
+        color: $main-color;
+      }
+    }
+
+    &--big-first {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      grid-area: bigOne;
+      background-color: $second-color;
+
+      @include vp--767 {
+        padding: 29px 35px;
+      }
+
+      & .tiles__item-dec {
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+        width: 348px;
+        height: 352px;
+
+        img {
+          width: 100%;
+          height: auto;
+
+          @include vp--767 {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        @include vp--1023 {
+          right: 106px;
+        }
+
+        @include vp--767 {
+          width: 153px;
+          height: 163px;
+          right: 0;
+        }
+      }
+
+      & .tiles__item-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 45px;
+        left: 43px;
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        background-color: $color-default-white;
+
+        @include vp--1023 {
+          left: 132px;
+        }
+
+        @include vp--767 {
+          left: 55px;
+          width: 35px;
+          height: 35px;
+          bottom: 24px;
+        }
+
+        & svg {
+          width: 50px;
+          height: 50px;
+          transform: rotate(-90deg);
+
+          @include vp--767 {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+
+      & .tiles__item-text {
+        width: 131px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 122%;
+        color: $color-default-white;
+
+        @include vp--1023 {
+          width: 100%;
+        }
+
+        @include vp--767 {
+          width: 126px;
+        }
+      }
+
+      & .tiles__item-name {
+        margin: 0 0 15px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+        color: $main-color;
+        border-radius: 16px;
+        color: $color-default-white;
+      }
+    }
+
+    &--big-second {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      grid-area: bigTwo;
+      background-color: $fourth-color;
+
+      @include vp--767 {
+        padding: 29px 35px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 77px;
+        bottom: 76px;
+        width: 14px;
+        height: 14px;
+        background-color: $color-default-white;
+        border-radius: 50%;
+
+        @include vp--1023 {
+          left: 186px;
+        }
+
+        @include vp--767 {
+          content: none;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: 70px;
+        right: 50px;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        background-color: $color-transparent;
+        border: 1px solid $color-default-white;
+
+        @include vp--767 {
+          content: none;
+        }
+      }
+
+      & .tiles__item-dec {
+        position: absolute;
+        bottom: 9px;
+        right: 0px;
+        width: 268px;
+        height: 235px;
+
+        @include vp--767 {
+          width: 94px;
+          height: 82px;
+          bottom: 5px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      & .tiles__item-text {
+        width: 278px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 122%;
+        color: $color-default-white;
+
+        @include vp--1023 {
+          width: 100%;
+        }
+      }
+
+      & .tiles__item-name {
+        margin: 0 0 15px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+        color: $main-color;
+        border-radius: 16px;
+        color: $color-default-white;
+      }
+
+      & .tiles__item-waves {
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        width: 179px;
+        position: absolute;
+        left: 0;
+        bottom: 152px;
+
+        @include vp--1023 {
+          left: 109px;
+        }
+
+        @include vp--767 {
+          left: 58px;
+          bottom: 25px;
+          width: 77px;
+        }
+
+        svg {
+          @include vp--767 {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    &--small {
+      padding: 47px 43px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 22px;
+      height: 100%;
+      grid-area: small;
+      background-color: $color-default-white;
+
+      @include vp--1023 {
+        row-gap: 42px;
+      }
+
+      @include vp--767 {
+        padding: 29px 35px;
+      }
+
+      & .tiles__item-dec {
+        position: absolute;
+        top: 14px;
+        right: 59px;
+        width: 152px;
+        height: 152px;
+
+        @include vp--1023 {
+          right: 94px;
+        }
+
+        @include vp--767 {
+          width: 87px;
+          height: 44px;
+          top: 12p;
+          right: 24px;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      & .tiles__item-name {
+        transform: rotate(-6.5deg);
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2rem;
+        letter-spacing: 0.1px;
+        color: $second-color;
+
+        @include vp--1023 {
+          position: relative;
+          top: 0;
+          transform: rotate(-6.5deg) translate(0, -30px);
+        }
+
+        @include vp--767 {
+          transform: rotate(-6.5deg) translate(0, 15px);
+        }
+      }
+
+      & .tiles__item-text {
+        width: 235px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 0.92rem;
+        line-height: 122%;
+        color: $main-color;
+
+        @include vp--1023 {
+          width: 100%;
+        }
+      }
+    }
+
+    &--biggest {
+      grid-area: biggestOne;
+      background-color: $third-color;
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+
+      @include vp--767 {
+        padding: 35px 35px;
+      }
+
+      & .tiles__item-dec {
+        position: absolute;
+        bottom: -2px;
+        right: calc(10% + 20px);
+        width: 294px;
+        height: 467px;
+
+        @include vp--1023 {
+          right: 49px;
+          width: 234px;
+          height: 374px;
+        }
+
+        @include vp--767 {
+          width: 103px;
+          height: 163px;
+          right: 4px;
+          bottom: 0;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      & .tiles__item-arrow {
+        position: absolute;
+        top: 179px;
+        left: 28px;
+        width: 92px;
+        height: 92px;
+
+        @include vp--1023 {
+          left: 160px;
+        }
+
+        @include vp--767 {
+          width: 25px;
+          height: 32px;
+          left: 70px;
+          bottom: 15px;
+          top: auto;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      & .tiles__item-text {
+        width: 215px;
+        margin: 0;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 122%;
+        color: $main-color;
+
+        @include vp--1023 {
+          width: 100%;
+        }
+
+        @include vp--767 {
+          width: 157px;
+        }
+      }
+
+      & .tiles__item-name {
+        margin: 0 0 8px;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+        color: $main-color;
+        border-radius: 16px;
+        color: $main-color;
+      }
+    }
+  }
+}

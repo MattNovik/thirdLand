@@ -1,22 +1,23 @@
 .make-order {
-  padding: 0 0 110px;
+  background: $main-color;
+  padding: 0 0 140px;
 
   @include vp--1023 {
-    padding: 0 0 100px;
+    padding: 0 15px;
+    margin: 0 0 140px;
   }
 
   @include vp--767 {
-    padding: 0 0 77px;
+    padding: 58px 15px;
   }
 
   &__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     column-gap: 50px;
-    max-width: 1140px;
+    max-width: 1410px;
     margin: 0 auto;
-    border-radius: 30px;
 
     @include vp--1439 {
       display: grid;
@@ -27,71 +28,43 @@
         "form form";
       column-gap: 100px;
       row-gap: 50px;
-    }
-
-    @include vp--1199 {
-      max-width: 1020px;
-    }
-
-    @include vp--1139 {
-      max-width: 904px;
+      margin: 0 15px;
     }
 
     @include vp--767 {
-      row-gap: 0;
+      margin: 0;
     }
   }
 
   &__form-wrapper {
-    position: relative;
     display: flex;
-    width: 100%;
-    background: linear-gradient(90deg, #2c48a5 -10.62%, #38adee 100%);
-    box-shadow: 0px 0px 31px 12px rgba(38, 66, 162, 0.1);
-    border: 16px solid #ffffff;
-    column-gap: 70px;
-    border-radius: 30px;
     align-items: center;
-    padding: 0 52px 0 473px;
-    min-height: 405px;
+    justify-content: space-between;
+    max-width: 1410px;
+    background-image: url("../img/content/formBg.jpg");
+    background-color: $main-color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
+    column-gap: 50px;
+    padding: 82px 50px;
+    border-radius: 44px;
 
     @include vp--1439 {
       grid-area: form;
       margin: 0 auto;
     }
 
-    @include vp--1199 {
-      padding: 0 52px 0 370px;
-    }
-
-    @include vp--1139 {
-      padding: 0 52px 0 260px;
-    }
-
     @include vp--1023 {
+      width: 100%;
       max-width: none;
-      padding: 0 0 0 140px;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 34px;
     }
 
     @include vp--767 {
-      padding: 60px 4px 0;
-      display: flex;
-      flex-direction: column-reverse;
-    }
-  }
-
-  &__text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    @include vp--1139 {
-      position: relative;
-      z-index: 100;
-    }
-
-    @include vp--767 {
-      margin: 0 0 20px;
+      padding: 51px 11px;
     }
   }
 
@@ -110,59 +83,38 @@
 
   &__title {
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+    font-size: 2rem;
+    line-height: 2.825rem;
     color: $color-default-white;
-    margin: 0 0 60px;
-    text-align: start;
+    margin: 0;
+
+    @include vp--1023 {
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+    }
 
     @include vp--767 {
       font-size: 1.25rem;
       line-height: 1.5rem;
-      margin: 0 0 20px;
-      text-align: center;
     }
 
     span {
-      color: $button-color;
+      color: $third-color;
     }
   }
 
   &__image {
-    position: absolute !important;
     min-width: 160px !important;
     min-height: 280px !important;
-    max-width: 313px;
-    max-height: 416px;
-    left: 90px;
-    bottom: 0;
 
-    @include vp--1199 {
-      left: 20px;
-      min-height: 240px !important;
-      min-width: 140px !important;
-    }
-
-    @include vp--1139 {
-      z-index: 10;
-      left: -20px;
-    }
-
-    @include vp--767 {
-      width: 184px;
-      height: 244px;
-      position: relative !important;
-      left: 0;
+    @include vp--1023 {
+      display: none !important;
     }
 
     & img {
-      height: 100%;
-      object-fit: cover;
-
-      @include vp--767 {
-        width: 100% !important;
-        height: 100% !important;
-      }
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
     }
 
     &--left {

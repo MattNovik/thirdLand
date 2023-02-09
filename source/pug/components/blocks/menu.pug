@@ -2,40 +2,37 @@ mixin menu()
   -
     const menuList= [
       {
-        name: "Заказать",
-        to: "#orders",
+        name: 'Отзывы',
+        to: '#reviews',
       },
       {
-        name: "Отзывы",
-        to: "#reviews",
+        name: 'Почему мы?',
+        to: '#whyWe',
       },
       {
-        name: "Процесс",
-        to: "#process",
-      },
-      {
-        name: "Контакты",
-        to: "#contacts",
+        name: 'Контакты',
+        to: '#contacts',
       },
     ]
 
   nav.menu()
     button.menu__close(type="button"  aria-label="close-menu")
-      +icon('icon-close',15,15)
+      +icon('icon-close',30,16)
     ul.menu__list
       each item,index in menuList
         li.menu__item
           a.menu__link(href=item.to )= item.name
     .menu__enters
       a.menu__enter(href="https://studservis-lk.ru/" type="button" target="_blank" rel="noreferrer") Вход
+      a.menu__enter-mob(href="#header" type="button") ОСТАВИТЬ ЗАЯВКУ
     .menu__wrapper-tel-email
-      p.menu__title Контакты:
-      a.menu__tel(href="tel:+78124093163")
-        +icon('icon-phone',10,16)
-        span +7 (812) 409-31-63
-      a.menu__email(href="mailto:studservis@yandex.ru")
-        +icon('icon-email',16,12)
-        span studservis@yandex.ru
+      a.menu__tel(href="tel:+78005519557")
+        span 8 (800) 551-95-57
+      a.menu__city(href="#")
+        span Санкт-Петербург
+      //- a.menu__email(href="mailto:studservis@yandex.ru")
+      //-   +icon('icon-email',16,12)
+      //-   span studservis@yandex.ru
     .menu__socials
       ul.menu__social-list
         li.menu__social-item.tg

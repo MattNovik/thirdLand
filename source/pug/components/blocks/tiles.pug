@@ -1,0 +1,33 @@
+mixin tiles()
+  .tiles#whyWe
+      .tiles__wrapper
+        .tiles__item.tiles__item--smallest-first
+          h6.tiles__item-name Качество
+          .tiles__item-dec
+          p.tiles__item-text Тройная проверка - гарантия успеха
+        .tiles__item.tiles__item--smallest-second
+          h6.tiles__item-name Опыт
+          +picture('content', 'longArrow', 'png',30,30,'longArrow').tiles__item-dec
+          p.tiles__item-text Работаем более 18 лет - с&nbsp;2004&nbsp;г.
+        .tiles__item.tiles__item--big-first
+          h6.tiles__item-name Надежность
+          +picture('content', 'infoImgOne', 'png',30,30,'woomen stud').tiles__item-dec
+          .tiles__item-arrow
+            +icon('icon-arrow', 30,30)
+          p.tiles__item-text Сопровождаем вас до сдачи
+        .tiles__item.tiles__item--big-second
+          h6.tiles__item-name Пунктуальность
+          +picture('content', 'clock', 'png',30,30,'clock').tiles__item-dec
+          .tiles__item-waves
+            +icon('icon-wave', 169, 13)
+            +icon('icon-wave', 169, 13)
+          p.tiles__item-text Персональный менеджер контролирует соблюдение сроков
+        .tiles__item.tiles__item--small
+          h6.tiles__item-name Договор
+          +picture('content', 'longArrowBG', 'png',30,30,'longArrow').tiles__item-dec
+          p.tiles__item-text Официальный договор и&nbsp;кассовый чек - всё по закону
+        .tiles__item.tiles__item--biggest
+          h6.tiles__item-name Поддержка
+          +picture('content', 'infoImgTwo', 'png',30,30,'woomen stud sec').tiles__item-dec
+          +picture('content', 'smalLArrow', 'svg',30,30,'longArrow').tiles__item-arrow
+          p.tiles__item-text Круглосуточная служба ответит на любые вопросы

@@ -2,6 +2,10 @@ import axios from "axios";
 
 const baseSuccessCallback = (event) => {
   const formData = new FormData(event.target);
+  console.log(formData);
+  event.target
+    .querySelector("button[type='submit'")
+    .setAttribute("disabled", "true");
   axios
     .post(
       "https://dev.studservis.ru/wp-content/themes/studservice/ajax/createOrder.php",
@@ -28,7 +32,12 @@ const baseSuccessCallback = (event) => {
         return (window.location.href = "https://studservis-lk.ru/");
       }
     })
-    .catch((error) => console.log("error"));
+    .catch((error) => {
+      event.target
+        .querySelector("button[type='submit'")
+        .setAttribute("disabled", "false");
+      console.log("error");
+    });
   event.preventDefault();
   // В данном колбеке бэкендер, либо разработчик при необходимости будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки или успешную отправку формы на сервер
 };

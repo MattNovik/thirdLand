@@ -28,6 +28,10 @@ const initMenuOpener = () => {
   Array.from(menuLinks).map((item) =>
     item.addEventListener("click", handleCloseMenu)
   );
+  const buttonEnterFromMenu = document.querySelector(".menu__enter");
+  if (buttonEnterFromMenu) {
+    buttonEnterFromMenu.addEventListener("click", handleCloseMenu);
+  }
   menuClose.addEventListener("click", handleCloseMenu);
   wrapperRef.addEventListener("click", handleCloseMenu);
 };

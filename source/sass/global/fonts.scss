@@ -5,7 +5,7 @@
 
   font-display: swap;
   src: url("../fonts/montserrat-bold.woff2") format("woff2"),
-    url("../assets/fonts/montserrat-bold.woff") format("woff");
+    url("../fonts/montserrat-bold.woff") format("woff");
 }
 
 @font-face {
@@ -26,4 +26,44 @@
   font-display: swap;
   src: url("../fonts/montserrat-regular.woff2") format("woff2"),
     url("../fonts/montserrat-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Navigo";
+
+  font-display: swap;
+  src: url("../fonts/navigo-bold.woff2") format("woff2"),
+    url("../fonts/navigo-bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Navigo";
+
+  font-display: swap;
+  src: url("../fonts/navigo-light.woff2") format("woff2"),
+    url("../fonts/navigo-light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Navigo";
+
+  font-display: swap;
+  src: url("../fonts/navigo-black.woff2") format("woff2"),
+    url("../fonts/navigo-black.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Navigo";
+
+  font-display: swap;
+  src: url("../fonts/navigo-regular.woff2") format("woff2"),
+    url("../fonts/navigo-regular.woff") format("woff");
 }

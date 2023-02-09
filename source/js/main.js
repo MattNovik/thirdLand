@@ -4,6 +4,7 @@ import { Form } from "./modules/form-validate/form";
 import { CustomSelect } from "./modules/select/custom-select";
 import { initPhotosSlider } from "./init-swiper";
 import { initMenuOpener } from "./modules/init-mob-menu";
+import { initFormSteps } from "./modules/init-form-steps";
 
 // ---------------------------------
 
@@ -27,6 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     form.init();
     initPhotosSlider();
     initMenuOpener();
+    initFormSteps();
   });
 });
 

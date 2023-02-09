@@ -1,143 +1,224 @@
 .start-page {
   position: relative;
-  margin: -91px 0 200px 0;
-  padding: 91px 0 0 0;
+  margin: 0 0 70px;
 
   @include vp--1023 {
-    margin: -50px 0 0;
-    padding: 50px 0 0 0;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/content//mainBG.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    @include vp--767 {
-      background-image: url("../img/content/mainBgMob.png");
-      background-position: center 75%;
-    }
-
-    @include vp--569 {
-      background-position: center 75%;
-    }
+    margin: 0 0 60px;
   }
 
   &__container {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    row-gap: 55px;
-    max-width: 1140px;
+    justify-content: center;
+    row-gap: 39px;
+    max-width: 1410px;
     margin: 0 auto;
-    min-height: 610px;
+    min-height: 635px;
     z-index: 10;
+    background-color: $color-default-white;
+    padding: 50px;
+    border-radius: 44px;
 
     @include vp--1439 {
-      padding: 0 60px;
-    }
-
-    @include vp--1199 {
-      padding: 0 60px 10px;
-    }
-
-    @include vp--1139 {
-      max-width: 1024px;
+      margin: 0 15px;
     }
 
     @include vp--1023 {
-      min-height: 500px;
-      padding: 68px 0 0;
+      min-height: 528px;
+      padding: 80px 31px;
       justify-content: space-between;
-      margin: 0 0 170px;
     }
 
     @include vp--767 {
-      min-height: 886px;
-      padding: 70px 15px 0;
-      margin: 0 0 100px;
-      justify-content: flex-start;
+      min-height: 630px;
+      padding: 216px 11px 56px;
+      justify-content: flex-end;
+      row-gap: 33px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 90px;
+      top: 79px;
+      height: 150px;
+      width: 150px;
+      background-image: url("../img/content/sale.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include vp--1023 {
+        content: none;
+      }
+
+      @include vp--767 {
+        content: "";
+        left: 15px;
+        top: 119px;
+        right: auto;
+        width: 71px;
+        height: 71px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 216px;
+      height: 1px;
+      width: 100%;
+      background-color: $main-color;
+    }
+  }
+
+  &__info-wrapper {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+
+    @include vp--767 {
+      align-items: flex-start;
+    }
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+    @include vp--767 {
+      flex-grow: 1;
+    }
+  }
+
+  &__info-block-name {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.56rem;
+    color: $color-default-black;
+
+    @include vp--767 {
+      font-size: 1rem;
+      line-height: 1.45rem;
+      white-space: nowrap;
+    }
+
+    &--desc {
+      @include vp--767 {
+        display: none;
+      }
+    }
+  }
+
+  &__info-block-value {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 122%;
+    letter-spacing: 0.035em;
+    color: $fourth-color;
+
+    @include vp--767 {
+      white-space: nowrap;
+    }
+
+    & span {
+      font-size: 1rem;
+      text-transform: uppercase;
+
+      @include vp--767 {
+        font-size: 0.875rem;
+      }
     }
   }
 
   &__main-image {
-    display: none;
     position: absolute !important;
     right: 0;
-    top: 0;
+    bottom: -2px;
     z-index: -1;
+    border-radius: 0 0 44px 0;
+    max-height: 702px;
 
-    @include vp--1439 {
+    /* @include vp--1439 {
       right: 60px !important;
     }
+ */
 
     @include vp--1023 {
-      right: 15px !important;
+      right: 0 !important;
+      max-height: 600px;
     }
 
     @include vp--767 {
-      right: 30px !important;
-    }
-
-    @include vp--569 {
-      right: -80px !important;
+      right: 30px;
+      width: auto;
+      height: 263px;
+      bottom: auto;
+      top: -47px;
+      right: 0;
+      border-radius: 0;
     }
 
     & img {
-      @include vp--1439 {
-        width: 460px !important;
-      }
+      border-radius: 0 0 44px 0;
+      width: 100%;
+      object-fit: contain;
 
+      /* @include vp--1023 {
+        object-fit: cover !important;
+      } */
+
+      @include vp--767 {
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+        border-radius: 0;
+      }
+    }
+
+    &--pc {
       @include vp--1023 {
-        width: 317px !important;
-        height: 417px !important ;
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      @include vp--1023 {
+        display: block;
       }
 
       @include vp--767 {
-        right: 30px !important;
-        width: 277px !important;
-        height: 365px !important;
+        display: none;
       }
+    }
 
-      @include vp--569 {
-        right: -80px !important;
-        width: 277px !important;
-        height: 365px !important;
+    &--mob {
+      display: none;
+
+      @include vp--767 {
+        display: block;
       }
     }
   }
 
   &__text-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    height: 100%;
-    max-width: 70%;
+    max-width: 50%;
 
     @include vp--1439 {
-      max-width: 60%;
+      max-width: 55%;
     }
 
     @include vp--1023 {
-      padding: 0 15px;
-      max-width: 65%;
+      max-width: 70%;
     }
 
     @include vp--767 {
-      padding: 0;
-      justify-content: flex-start;
+      padding: 23px 0 0 0;
       max-width: 100%;
-      flex-grow: 0;
     }
   }
 
@@ -157,40 +238,35 @@
 
   &__title {
     font-weight: 700;
-    font-size: 3.125rem;
-    line-height: 3.8rem;
-    letter-spacing: 0.2px;
-    margin: 0 0 28px;
-    color: $color-default-white;
-
-    @include vp--1199 {
-      font-size: 3.2rem;
-    }
+    font-size: 3rem;
+    line-height: 122%;
+    margin: 0 0 39px;
+    color: $dark-text;
 
     @include vp--1023 {
-      font-size: 2rem;
-      line-height: 2.45rem;
-      margin: 0 0 30px;
+      font-size: 2.25rem;
+      line-height: 122%;
+      margin: 0 0 54px;
     }
 
     @include vp--767 {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: 1.125rem;
+      line-height: 122%;
       margin: 0 0 20px;
     }
   }
 
+  &__title-link {
+    color: $second-color;
+    text-decoration: none;
+  }
+
   &__info-text {
     font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    color: $color-default-white;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    color: $light-text;
     margin: 0;
-
-    @include vp--1023 {
-      font-size: 1rem;
-      line-height: 1.25rem;
-    }
 
     @include vp--767 {
       font-size: 0.875rem;

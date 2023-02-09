@@ -2,9 +2,24 @@ mixin startPage()
   .start-page
     .start-page__container
       .start-page__text-wrapper
-        h1.start-page__title Закажи студенческую работу без посредников
-        p.start-page__info-text
-          | Студсервис — организация помощи студентам, официально работает с
-          | 2004 года.
+        h1.start-page__title
+          | Нужна
+          =' '
+          a.start-page__title-link(href="#") помощь
+          |  с курсовой в Санкт-Петербурге?
+        .start-page__info-wrapper
+          .start-page__info-block
+            span.start-page__info-block-name Цена курсовой:
+            span.start-page__info-block-value от 1600
+              span  Руб.
+          .start-page__info-block
+            span.start-page__info-block-name Срок
+              span.start-page__info-block-name.start-page__info-block-name--desc  исполнения
+              | :
+            span.start-page__info-block-value 1-7
+              span  дней
+      +picture('content', 'startImage','png',700,702,'stud-first').start-page__main-image.start-page__main-image--pc
+      +picture('content', 'startImageTable','png',330,600,'stud-first').start-page__main-image.start-page__main-image--tablet
+      +picture('content', 'startImageMob','png',200,263,'stud-first').start-page__main-image.start-page__main-image--mob
       +customForm({classname: 'first-form',id: 'orders'})
 

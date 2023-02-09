@@ -2,11 +2,9 @@ mixin makeOrder()
     section.make-order
       .make-order__container
         .make-order__form-wrapper
-          +picture('content','order','png',313,416,'illFirst').make-order__image
-          .make-order__text-wrapper
-            h2.make-order__title
-              | Дарим скидку
-              span  до 15%
-              |  на первый заказ при регистрации:
-            +customForm({classname: 'second-form',id: 'second'})
+          h2.make-order__title
+            | Дарим скидку
+            span  до 15%
+            |  на первый заказ при регистрации:
+          +customForm({classname: 'second-form',id: 'second'})
 
