@@ -7,6 +7,10 @@
     background-color: $main-color;
   }
 
+  @include vp--767 {
+    padding: 0 15px 24px 15px;
+  }
+
   &__container {
     display: grid;
     grid-template-areas:
@@ -37,6 +41,10 @@
         "addres"
         "cards"
         "contact";
+    }
+
+    @include vp--767 {
+      margin: 0;
     }
   }
 
@@ -79,6 +87,10 @@
 
     svg {
       max-width: 50px;
+
+      @include vp--767 {
+        max-width: 45px;
+      }
     }
   }
 

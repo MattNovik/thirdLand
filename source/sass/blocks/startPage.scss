@@ -63,7 +63,7 @@
     }
 
     &::before {
-      content: "";
+      content: none;
       position: absolute;
       left: 0;
       right: 0;
@@ -71,6 +71,10 @@
       height: 1px;
       width: 100%;
       background-color: $main-color;
+
+      @include vp--767 {
+        content: "";
+      }
     }
   }
 
