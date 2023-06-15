@@ -1,6 +1,6 @@
 mixin customForm(options)
   div(data-form-validate, data-callback="base")
-    form(class=`${options.classname ? 'custom-form ' + options.classname : 'custom-form'}` id=`${'form ' + options.id}` method='post')
+    form(class=`${options.classname ? 'custom-form ' + options.classname : 'custom-form'}` id=`${'form-' + options.id}` method='post')
       p.custom-form__title Рассчитайте точную цену:
       .custom-form__inputs-wrapper
         if options.classname === 'second-form'
@@ -21,14 +21,14 @@ mixin customForm(options)
             inputName: "email",
             inputPlaceholder: 'Введите Email'
           })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required).custom-form__input.custom-form__input--first-email.visibility-hidden
-          input.partnerId(type="hidden" name="partnerId" value="#PARTNER_ID_VALUE#")
+          input.partnerId(type="hidden" name="label_id" value="#LABEL_ID_VALUE#")
         if options.classname === 'second-form'
           button.custom-form__button(type="submit") РАССЧИТАТЬ
         else
           button.custom-form__button.custom-form__button--next(type="button") ПРОДОЛЖИТЬ
           button.custom-form__button.custom-form__button--last.visibility-hidden(type="submit") РАССЧИТАТь
       div(data-validate-type="checkbox" data-required).custom-form__input-agreeament-wrapper
-        input(name="agreeament" checked=true class='custom-form__input-agreeament visibility-hidden' id=`${'agreeament ' + options.id}` type="checkbox" )
-        label(for=`${options.id ? 'agreeament ' + options.id: 'agreeament'}`)  Нажимая кнопку "Узнать стоимость", вы соглашаетесь с
+        input(name="agreeament" checked=true class='custom-form__input-agreeament visibility-hidden' id=`${options.id ? 'agreeament-' + options.id: 'agreeament'}` type="checkbox" )
+        label(for=`${options.id ? 'agreeament-' + options.id: 'agreeament'}`)  Нажимая кнопку "Узнать стоимость", вы соглашаетесь с
           =' '
-          a(href="#some") политикой конфиденциальности
+          a(target="_blank" href="https://stud-servis.ru/wp-content/themes/stud-servis-safe/inc/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf") политикой конфиденциальности
