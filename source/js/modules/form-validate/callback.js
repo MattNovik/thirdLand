@@ -4,38 +4,22 @@ const baseSuccessCallback = (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   axios
-    .post(
-      "https://back.studuniverse.ru/api/public/user",
-      formData,
-    )
+    .post("https://back.studuniverse.ru/api/public/user", formData)
     .then((response) => {
       console.log(response);
-      if (typeof response.link !== "undefined" && response.link.length > 0) {
-        return (window.location.href = response.authLink);
-      }
-      if (response.order_id && response.action === "userIsset") {
-        return (window.location.href =
-          "https://dev2.studservis-lk.ru/" +
-          "orders/newOrder/id=" +
-          response.order_id +
-          "/new/");
-      } else {
-        return (window.location.href = "https://dev2.studservis-lk.ru/");
-      }
-      /* if (typeof response.link !== "undefined" && response.link.length > 0) {
+      if (
+        typeof response.data.data.authlink !== "undefined" &&
+        response.data.data.authlink > 0
+      ) {
         return (window.location.href = response.link);
-      }
-      if (response.order_id && response.action === "userIsset") {
-        return (window.location.href =
-          "https://studservis-lk.ru/" +
-          "orders/newOrder/id=" +
-          response.order_id +
-          "/new/");
       } else {
         return (window.location.href = "https://studservis-lk.ru/");
-      } */
+      }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      alert("Ошибка! Попробуйте ещё раз");
+      console.log("error");
+    });
   // В данном колбеке бэкендер, либо разработчик при необходимости будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки или успешную отправку формы на сервер
 };
 
