@@ -11,8 +11,7 @@ const baseSuccessCallback = (event) => {
         typeof response?.data?.data?.authlink !== "undefined" &&
         response?.data?.data?.authlink?.length > 0
       ) {
-        return (window.location.href =
-          response?.data?.data?.authlink + "firstOrder/");
+        return (window.location.href = response?.data?.data?.authlink);
       } else {
         return (window.location.href = "https://studservis-lk.ru/");
       }
